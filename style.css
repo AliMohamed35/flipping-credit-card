@@ -1,0 +1,144 @@
+/* Import Google Font - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+section {
+  min-width: 100%;
+  background-color: #121321;
+  width: 100%; /*ay haga 3lshan ttlwn mhtaga width w h*/
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  perspective: 1000px; /**study*/
+}
+section::before {
+  content: ""; /**mohem gdn w diman btnsaha**/
+  position: absolute;
+  background: linear-gradient(90deg, #9c27b0, #f3f5f5);
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  transform: translate(-150px, -100px);
+}
+section::after {
+  content: ""; /**mohem gdn w diman btnsaha**/
+  position: absolute;
+  background: linear-gradient(90deg, #9c27b0, #f3f5f5);
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  transform: translate(150px, 100px);
+}
+/********************card***************/
+.container {
+  position: relative;
+  height: 225px;
+  width: 375px;
+  z-index: 10;
+  transition: 0.6s;
+  transform-style: preserve-3d; /*study*/
+}
+.container .card {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  backdrop-filter: blur(25px);
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 25px;
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 25px;
+  backface-visibility: hidden; /*3lshan m3molo rotate 180deg fa mdyna dahro fa n2dr n3mlo hide*/
+}
+.container:hover{
+  transform: rotateY(180deg);
+}
+.front-face header,
+.front-face .logo {
+  display: flex;
+  align-items: center;
+}
+.front-face header {
+  justify-content: space-between;
+}
+.front-face .logo img {
+  width: 48px;
+  margin-right: 10px;
+}
+h5 {
+  font-weight: 400;
+  font-size: 1rem;
+}
+.front-face .chip {
+  width: 50px;
+}
+.front-face .card-details {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+h6 {
+  font-weight: 400;
+  font-size: 8px;
+}
+h5.number {
+  letter-spacing: 1px;
+  font-size: 1.125rem;
+}
+h5.name {
+  margin-top: 20px;
+}
+.card.back-face {
+  border: none;
+  padding: 15px 25px 25px 25px;
+  transform: rotateY(180deg);
+}
+.card .back-face h6 {
+  font-size: 8px;
+}
+.card.back-face .magnetic-strip {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  width: 100%;
+  height: 45px;
+  background: black;
+}
+.card.back-face .signature {
+  margin-top: 70px;
+  height: 40px;
+  width: 85%;
+  border-radius: 6px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background: repeating-linear-gradient(
+    #fff,
+    #efefef 3px,
+    #efefef 0px,
+    #efefef 9px
+  );
+}
+.signature i {
+  color: black;
+  margin-right: -30px;
+  padding: 4px 6px;
+  font-size: 12px;
+  border-radius: 4px;
+  background: white;
+  z-index: -1;
+}
+.card.back-face h5 {
+  font-size: 9px;
+  margin-top: 20px;
+}
